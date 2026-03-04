@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<article class="post">
+  <div class="container post-container">
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%Y년 %m월 %d일" }}
+        </time>
+        {% if page.tags.size > 0 %}
+        <div class="post-tags">
+          {% for tag in page.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      <h1 class="post-title">{{ page.title }}</h1>
+    </header>
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+    <footer class="post-footer">
+      <a href="{{ '/' | relative_url }}" class="back-link">← 홈으로 돌아가기</a>
+    </footer>
+  </div>
+</article>

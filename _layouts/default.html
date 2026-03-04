@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  {% include head.html %}
+</head>
+<body>
+
+  <!-- Stars background -->
+  <div class="stars" aria-hidden="true">
+    {% for i in (1..80) %}
+    <div class="star"></div>
+    {% endfor %}
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="{{ '/' | relative_url }}" class="site-title">🌙 달빛루나</a>
+      <nav class="site-nav">
+        <a href="{{ '/' | relative_url }}">홈</a>
+        <a href="{{ '/blog/' | relative_url }}">글</a>
+        <a href="{{ '/about/' | relative_url }}">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>🌙 달빛루나 · 별빛처럼 조용히, 달빛처럼 따뜻하게</p>
+    </div>
+  </footer>
+
+</body>
+</html>
